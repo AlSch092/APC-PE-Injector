@@ -8,7 +8,7 @@ APC Injection is a code injecting technique which bypasses TLS callback protecti
 4. The target process then executes our thread task the next time the thread enters an alertable state, and our payload function is executed. Because we copied our entire PE image to the target, we now have our full process injected into the target.
 
 ## Benefits:
-TLS callbacks are bypassed using this method, allowing us to inject code regardless of whether or not the target processes is rejecting threads via TLS Callbacks. This means that we can now gain a foothold into a target process where traditional DLL/PE injection would fail (as they rely on CreateRemoteThread for payload execution).
+TLS callbacks are bypassed using this method, allowing us to inject code regardless of whether or not the target process is rejecting threads through its TLS Callbacks. This means that we can now gain a foothold into a target process where traditional DLL/PE injection would fail (as they usually rely on CreateRemoteThread for payload execution).
 
 ## How to use:
 `./APCInjector.exe targetprocess.exe` - By default the payload function `APCFunction` is executed, and you can change this in the source code if needed. Ensure that you're building in x64 when using this example.
