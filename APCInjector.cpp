@@ -1,3 +1,4 @@
+// Made by AlSch092 @ Github
 // APCInjector.cpp : Copies the current PE image into a target process and executes a payload function using APC, giving us a foothold while bypassing anti-thread mechanisms in TLS callbacks.
 // this means in theory we can defeat TLS callback protections /w remapping from usermode
 
